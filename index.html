@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="input-range.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="landing">
+	<div id="main-container">
+		<div id="quest-container">
+			<h1>
+				CHE COSA SIGNIFICA ESSERE UMANI NELL’ERA DELL’INTELLIGENZA ARTIFICIALE?
+			</h1>
+		</div>
+			<!-- all the slider that change the matrix -->
+			<div id="slider-container">
+				<!-- stay on left side and be horizontal -->
+				<div>
+					<div class="slider">
+						<span class="slider-label">Creatività</span>
+						<input id="zerSlider" type="range" min="0" max="7" value="0" step="1"></input>
+					</div>
+					<div class="slider">
+						<span class="slider-label">Emozioni</span>
+						<input id="emoSlider" type="range" min="0" max="9" value="0" step="1"></input>
+					</div>
+					<div class="slider">
+						<span class="slider-label">Efficienza</span>
+						<input id="effSlider" type="range" min="0" max="9" value="0" step="1"></input>
+					</div>
+					<div class="slider">
+						<span class="slider-label">Immortalità</span>
+						<input id="alcSlider" type="range" min="0" max="9" value="0" step="1"></input>
+					</div>
+				</div>
+				<!-- stay on right side and be vertical -->
+				<div>
+					<div class="slider">
+						<span class="slider-label">Ruleset</span>
+						<input id="creSlider" type="range" min="0" max="8" value="0" step="1"></input>
+					</div>
+				</div>
+			</div>
+			<div>
+				<button id="save">salva il tuo logo</button>
+			</div>
+			<div id="nav">
+				<div>
+					<h4>
+						Associazione Culturale
+						<strong>Umanesimo Artificale</strong>
+					</h4>
+				</div>
+				<div>
+					<a>
+						Contattaci
+					</a>
+				</div>
+				<div>
+					<a>
+					 Logo design process
+					</a>
+				</div>
+			</div>
+	</div>
+	<div id="sketch-container">
+		<!-- Our sketch will go here! -->
+		<div id="sketch-holder">
+		</div>
+	</div>
+
+</div>
+
+
+<script language="javascript" type="text/javascript" src="u-a.js"></script>
+</body>
+</html>
