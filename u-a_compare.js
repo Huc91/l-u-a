@@ -1,6 +1,6 @@
 //logo generator for U - A Umanesimo Artificiale
 //author: Luca Ucciero
-
+gg
 
 
 //bug test
@@ -20,40 +20,13 @@ function debug() {
 }
 //***************************
 
-//get NASA data, I'll use them later
+//code
 
-//demo key Hourly Limit: 30 requests per IP address per hour
-//Daily Limit: 50 requests per IP address per day
-//https://api.nasa.gov/api.html#web-service-rate-limits
-//CORS query //https://api.nasa.gov/planetary/apod/direct?date=2015-06-03&api_key=DEMO_KEY
-
-var data;
-var url = 'https://api.nasa.gov/planetary/apod?api_key=pJ3uPMZzmra9ithw4Dc5eWsMvy8uxUmZGqqnapwS';
-var request = new XMLHttpRequest();
-request.open('GET', url, false);
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    // Success!
-    data = JSON.parse(request.responseText);
-  } else {
-    data = {'url': 'img/imm.jpg'}
-  }
-};
-request.onerror = function() {
-  // There was a connection error of some sort
-    data = {'url': 'img/imm.jpg'}
-};
-request.send();
-
-
-//define the random integer function
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-//add the event listener to the dom
 document.addEventListener("DOMContentLoaded", function() {
-
   //sliders
   //creSlider -> slider to add cells
   //emoSlider -> slider connected to emotions, add grayscale
@@ -67,13 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //I'll use it to get a click/tap event on the canvas
   var matContainer = document.getElementById('sketch-holder');
 
-
-  //define the cells
-
-  //18 var cells = [0, 0, 0 ,1 ,1 ,1 ,0 ,0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  //9  var cells = [0, 0, 0 ,1 ,1 ,1 ,0 ,0 ,0];
-  //27 var cells = [0, 0, 0 ,1 ,1 ,1 ,0 ,0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,1 ,1 ,1 ,0 ,0 ,0];
-  var cells = [0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0 , 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0];
+  var cells = [1, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0];
 
   var matrix = [];
 
@@ -90,9 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   var currentRule = 0;
-  //var w = 16;
   var canvasWidth = (matContainer.clientWidth);
-  var w = Math.round(canvasWidth/cells.length);
+  var w = (canvasWidth/cells.length+1);
 
   //adding colors:
   //write outside the draw() a function to add colors.
@@ -101,14 +67,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   //generate a blank all 0s matrix
   function generateMatrix(){
-    //create a row filled with zeros, we'll mutate them after
-    var row = [];
-    for (var c = 0; c < cells.length; c++){
-      row.push(0)
-    }
     for (var i = 0; i < cells.length; i++){
-      //push the row into the matrix
-      matrix.push(row.slice());
+      //create a row
+      //the row is [0,0,0,0,0,0,0,0]
+      matrix.push([0,0,0,0,0,0,0,0,0]);
     }
   }
   generateMatrix();
@@ -158,22 +120,6 @@ document.addEventListener("DOMContentLoaded", function() {
   //https://github.com/processing/p5.js/wiki/Global-and-instance-mode
   //that's why a use that "weird" p  before p5.js methods
   var s = function( p ) {
-
-
-    var creArt = [];
-    var nasa;
-    p.preload = function(){
-    //creativity images array holder
-
-    var maximgs = 20;
-    var allimgs = 70;
-      for (var i = 1; i <= maximgs; i++) {
-        creArt[i] = p.loadImage('img/cre/'+(getRandomInt(70)+1)+'.jpg');
-      }
-      nasa = p.createImg(data.url);
-      nasa.hide();
-    }
-
     //about loop & noLoop: https://p5js.org/reference/#/p5/noLoop
     // I used them to stop and restart the draw fuction
     //otherwise it will loop continuosly as defined in the p5.js library
@@ -248,6 +194,21 @@ document.addEventListener("DOMContentLoaded", function() {
       p.endShape(p.CLOSE);
     }
 
+    //create lines pattern
+
+    function linePattern(x1, y1, w, density){
+      var increment = w/density;
+      for (var a = 1; a < density+1; a++) {
+        //line(x1,y1,x2,y2)
+        p.line(x1, y1+(a*increment), x1+(a*increment), y1)
+      }
+      for (var v = 1; v < density; v++) {
+        //line(x1,y1,x2,y2)
+        p.line(x1+(v*increment), y1+w, x1+w, y1+(v*increment))
+      }
+    }
+
+
     //what to display in the draw function
     function display(matrix) {
       console.log('display');
@@ -281,25 +242,29 @@ document.addEventListener("DOMContentLoaded", function() {
               //add normal white squares
             } else {
               p.fill(255)
-              p.noStroke();
+              p.stroke(255);
               p.rect(j*w, i*w, w, w);
             }
             //if 0 = black square (inverted)
           } else {
             //add greyscale or color emotion
               if (getRandomInt(16)+1 <= emoSlider.value && i > 1 && i < matrix.length - 2){
-
-                //add image from NASA APOD json
-                p.fill(125)
+                //greyscale
+                //p.fill(0 + 28*getRandomInt(emoSlider.value))
+                //color: violet: #7233DA | green: #79EFCB | yellow: #FFCC00
+                p.fill('#FFCC00');
                 p.noStroke();
                 p.rect(j*w, i*w, w, w);
-                p.image(nasa,j*w+w/2, i*w+w/2, w, w);
-                //add art
+                //add line pattern
               } else if (getRandomInt(48)+1 <= creSlider.value) {
                 p.fill(0)
                 p.noStroke();
-                p.image(creArt[getRandomInt(18)+1],j*w+w/2, i*w+w/2, w, w);
-
+                p.push();
+                p.rect(j*w, i*w, w, w);
+                p.stroke(255)
+                p.strokeWeight(2)
+                linePattern(j*w, i*w, w, 4)
+                p.pop();
                 //add zeros efficiency
               } else if (getRandomInt(32)+1 <= effSlider.value) {
                 p.fill(255)
@@ -313,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 //add normal black square
               } else  {
                 p.fill(0)
-                p.noStroke();
+                p.stroke(0);
                 p.rect(j*w, i*w, w, w);
               }
           }
@@ -326,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function() {
     p.createCanvas(canvasWidth, canvasWidth);
     p.stroke(255);
     p.noFill();
-    p.imageMode(p.CENTER);
     //p.noLoop(); //draw doesn't loop
   };
 
@@ -338,17 +302,15 @@ document.addEventListener("DOMContentLoaded", function() {
     display(wolfRamize(cells, matrix));
     //brand typography
     //top & bottom text with blend mode difference
-    /*
     p.push()
     p.fill(255)
     p.blendMode(p.DIFFERENCE);
-    p.textSize(w*4.3);
+    p.textSize(w*1.45);
     p.textFont('Work Sans');
     p.textAlign(p.LEFT, p.CENTER);
-    p.text('UMANESIMO', 0, 0, w*(cells.length+1), w*6);
-    p.text('ARTIFICIALE', 0, w*(cells.length-6), w*(cells.length+1), w*6);
+    p.text('UMANESIMO', 0, 0, w*10, w*2);
+    p.text('ARTIFICIALE', 0, w*7, w*10, w*2);
     p.pop()
-    */
 
 
   };
