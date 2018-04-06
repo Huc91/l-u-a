@@ -31,6 +31,7 @@ var data;
 var url = 'https://api.nasa.gov/planetary/apod?api_key=pJ3uPMZzmra9ithw4Dc5eWsMvy8uxUmZGqqnapwS';
 var request = new XMLHttpRequest();
 request.open('GET', url, false);
+request.setRequestHeader('Access-Control-Allow-Origin', '*');
 request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
     // Success!
@@ -62,7 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
       emoSlider = document.getElementById('emoSlider'),
       effSlider = document.getElementById('effSlider'),
       alcSlider = document.getElementById('alcSlider'),
-      zerSlider = document.getElementById('zerSlider');
+      zerSlider = document.getElementById('zerSlider'),
+      saveButton= document.getElementById('save'),
+      nameInput = document.getElementById('name');
 
   //I'll use it to get a click/tap event on the canvas
   var matContainer = document.getElementById('sketch-holder');
@@ -86,10 +89,11 @@ document.addEventListener("DOMContentLoaded", function() {
     ['rule_43',  [0, 0, 1, 0, 1 ,0, 1, 1]],
     ['rule_73',  [0, 1, 0, 0, 1, 0, 0, 1]],
     ['rule_105', [0, 1, 1, 0, 1, 0, 0, 1]],
-    ['rule_110', [0, 1, 1, 0, 1, 1, 1, 0]]
+    ['rule_110', [0, 1, 1, 0, 1, 1, 1, 0]],
+    ['rule_150', [1, 0, 0, 1, 0, 1, 1, 0]]
   ];
 
-  var currentRule = 0;
+  var currentRule = 4;
   //var w = 16;
   var canvasWidth = (matContainer.clientWidth);
   var w = Math.round(canvasWidth/cells.length);
@@ -172,7 +176,9 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       nasa = p.createImg(data.url);
       nasa.hide();
+
     }
+
 
     //about loop & noLoop: https://p5js.org/reference/#/p5/noLoop
     // I used them to stop and restart the draw fuction
@@ -222,6 +228,24 @@ document.addEventListener("DOMContentLoaded", function() {
       p.loop();
     });
 
+    //save the Logo
+    saveButton.addEventListener("click", function(){
+      p.saveCanvas();
+    });
+
+    //get the inserted text string
+    var nameInitial = '';
+    nameInput.addEventListener("input", function(){
+      var value = nameInput.value.toString();
+       if (value.match(/[a-z]/i)) {
+        // alphabet letters found && is made of two letters
+          nameInitial = value;
+          console.log('ok to pass to p5');
+          p.loop();
+        }
+    });
+
+
     //create polygon fuction
     function polygon(x, y, radius, slidevalue) {
       console.log('slidevalue' + slidevalue);
@@ -246,6 +270,21 @@ document.addEventListener("DOMContentLoaded", function() {
         p.vertex(sx, sy);
       }
       p.endShape(p.CLOSE);
+    }
+
+    //create initial big square
+    function letteringSquare(x,y,dimension,initial){
+      p.push();
+      p.fill(0);
+      p.rect(x,y,dimension,dimension);
+      //p.fill(255)
+      //p.rect(x+w,y+w,dimension-w,dimension-w);
+      p.fill(255)
+      p.textSize(w*3);
+      p.textFont('Space Mono');
+      p.textAlign(p.CENTER, p.CENTER);
+      p.text(' '+initial, x, y, dimension, dimension);
+      p.pop()
     }
 
     //what to display in the draw function
@@ -319,6 +358,15 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
       }
+      //add the initials
+      console.log(nameInitial);
+      if (nameInitial.length === 2) {
+        //letteringSquare parameters x,y,dimension,initial
+        var first = nameInitial.slice(0,1);
+        var second = nameInitial.slice(1,2);
+        letteringSquare(0,0,w*6,first);
+        letteringSquare((w*cells.length)-(w*6),(w*cells.length)-(w*6),w*6,second);
+      }
       p.noLoop()
     };
 
@@ -349,6 +397,7 @@ document.addEventListener("DOMContentLoaded", function() {
     p.text('ARTIFICIALE', 0, w*(cells.length-6), w*(cells.length+1), w*6);
     p.pop()
     */
+
 
 
   };

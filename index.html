@@ -1,8 +1,29 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="Shortcut Icon" href="img/favicon.gif">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="keywords" content="">
+	<meta name="author" content="Luca Ucciero">
+	<title>Umanesimo Artificiale</title>
+
+	<!--Meta social -->
+	<meta property="og:title" content="Umanesimo Artificiale">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.umanesimoartificiale.xyz">
+	<meta property="og:image" content="">
+	<meta property="og:image:width" content="600">
+	<meta property="og:image:height" content="314">
+
+	<meta property="og:url" content="http://www.umanesimoartificiale.xyz">
+	<meta property="og:description" content="Associazione culturale Umanesimo Artificiale">
+	<meta name="keywords" content="arte, umanesimo, intelligenza artificiale, festival, creative coding, Fano">
+	<meta name="author" content="Luca Ucciero">
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+		<script src="libraries/typed.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
@@ -11,27 +32,10 @@
 
 <body>
 <div id="landing">
-	<div id="nav">
-		<div>
-			<h4>
-				<strong>Umanesimo Artificiale</strong>
-			</h4>
-		</div>
-		<div>
-			<a>
-				Contattaci
-			</a>
-		</div>
-		<div>
-			<a>
-			 Logo design process
-			</a>
-		</div>
-	</div>
 	<div id="main-container">
 		<div id="quest-container">
 			<h1>
-				CHE COSA SIGNIFICA ESSERE UMANI NELL’ERA DELL’INTELLIGENZA ARTIFICIALE?
+				CHE COSA SIGNIFICA</br>ESSERE UMANI NELL’ERA DELL’INTELLIGENZA ARTIFICIALE?
 			</h1>
 		</div>
 			<!-- all the slider that change the matrix -->
@@ -40,10 +44,10 @@
 				<div>
 					<div class="slider">
 						<span class="slider-label">Creatività</span>
-						<input id="zerSlider" type="range" min="0" max="7" value="0" step="1"></input>
+						<input id="creSlider" type="range" min="0" max="8" value="0" step="1"></input>
 					</div>
 					<div class="slider">
-						<span class="slider-label">Emozioni</span>
+						<span class="slider-label">Ambizione</span>
 						<input id="emoSlider" type="range" min="0" max="9" value="0" step="1"></input>
 					</div>
 					<div class="slider">
@@ -57,14 +61,27 @@
 				</div>
 				<!-- stay on right side and be vertical -->
 				<div>
-					<div class="slider">
-						<span class="slider-label">Ruleset</span>
-						<input id="creSlider" type="range" min="0" max="8" value="0" step="1"></input>
+					<div class="slider vertical">
+						<div>
+						<span class="slider-label">Uomo</span>
+						</div>
+						<div>
+						<input id="zerSlider" type="range" class="vertical" min="0" max="8" value="4" step="1"></input>
+					  </div>
+						<div>
+						<span class="slider-label">Macchina</span>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div>
-				<button id="save">salva il tuo logo</button>
+			<div id="controls">
+				<div>
+					Scrivi le iniziali del tuo nome
+					<input type="text" id="name" placeholder="Inserisci 2 lettere" maxlength="2" pattern="[A-Za-z]{2}" />
+				</div>
+				<div>
+					<button id="save">salva il tuo logo</button>
+				</div>
 			</div>
 	</div>
 	<div id="sketch-container">
@@ -72,7 +89,23 @@
 		<div id="sketch-holder">
 		</div>
 	</div>
-
+	<div id="nav">
+		<div>
+			<h4>
+				<strong>Umanesimo Artificiale</strong>
+			</h4>
+		</div>
+		<div>
+			<a>
+				Logo design process
+			</a>
+		</div>
+		<div>
+			<a>
+			 <!--Contatta-->
+			</a>
+		</div>
+	</div>
 </div>
 
 

@@ -38,7 +38,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 100%;
   background: var(--main-thumb-color);
   cursor: pointer;
-  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
 /* All the same stuff for Firefox */
@@ -98,4 +98,13 @@ input[type=range]::-ms-fill-upper {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #BDBDBD;
+}
+
+input[type=range].vertical {
+    width: 231px;
+    -webkit-transform: rotate(90deg) translate(115px,0);
+    -moz-transform: rotate(90deg) translate(115px,0);
+    -o-transform: rotate(90deg) translate(115px,0);
+    -ms-transform: rotate(90deg) translate(115px,0);
+    transform: rotate(90deg) translate(115px,0);
 }
