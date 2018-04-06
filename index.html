@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="Shortcut Icon" href="img/favicon.gif">
+	<link rel="Shortcut Icon" href="img/favicon.ico">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="keywords" content="">
 	<meta name="author" content="Luca Ucciero">
@@ -42,7 +42,7 @@
 				<!-- all the slider that change the matrix -->
 				<div id="slider-container">
 					<!-- stay on left side and be horizontal -->
-					<div>
+					<div id="parameters">
 						<div class="slider">
 							<span class="slider-label">Creatività</span>
 							<input id="creSlider" type="range" min="0" max="8" value="0" step="1"></input>
@@ -66,7 +66,7 @@
 							<div>
 							<span class="slider-label">Uomo</span>
 							</div>
-							<div>
+							<div class="vertical--range-container">
 							<input id="zerSlider" type="range" class="vertical" min="0" max="8" value="4" step="1"></input>
 						  </div>
 							<div>
@@ -77,11 +77,11 @@
 				</div>
 				<div id="controls">
 					<div>
-						Scrivi le iniziali del tuo nome
-						<input type="text" id="name" placeholder="UA" maxlength="2" pattern="[A-Za-z]{2}" />
+						<span class="hint">Scrivi le tue iniziali</span>
+						<input type="text" id="name" placeholder="Le iniziali del tuo nome" maxlength="2" pattern="[A-Za-z]{2}" />
 					</div>
 					<div>
-						<button id="save">salva il tuo logo</button>
+						<button id="save">salva logo</button>
 					</div>
 				</div>
 		</div>
@@ -94,18 +94,25 @@
 	<div id="nav">
 		<div>
 			<h4>
+				Associazione culturale</br>
 				<strong>Umanesimo Artificiale</strong>
 			</h4>
 		</div>
-		<div>
+		<div id="logo-name">
 			<a>
-				Logo design process
+				Logo design process</br>
+				"Hacking Wolfram"
 			</a>
 		</div>
-		<div>
-			<a>
-			 <!--Contatta-->
-			</a>
+		<div id="contact">
+			<div id="social-row">
+				<a><img src="img/instagram.svg" class="social"></img></a>
+				<a><img src="img/facebook.svg"  class="social"></img></a>
+				<a href="index.html">IT</a>/<a>EN</a>
+			</div>
+			<div>
+				<a class="styled" href="mailto:hello@umanesimoartificiale.xyz">hello@umanesimoartificiale.xyz</a>
+			</div>
 		</div>
 	</div>
 </div>

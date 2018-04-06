@@ -20,33 +20,6 @@ function debug() {
 }
 //***************************
 
-//get NASA data, I'll use them later
-
-//demo key Hourly Limit: 30 requests per IP address per hour
-//Daily Limit: 50 requests per IP address per day
-//https://api.nasa.gov/api.html#web-service-rate-limits
-//CORS query //https://api.nasa.gov/planetary/apod/direct?date=2015-06-03&api_key=DEMO_KEY
-
-var data;
-var url = 'https://api.nasa.gov/planetary/apod?api_key=pJ3uPMZzmra9ithw4Dc5eWsMvy8uxUmZGqqnapwS';
-var request = new XMLHttpRequest();
-request.open('GET', url, false);
-request.setRequestHeader('Access-Control-Allow-Origin', '*');
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    // Success!
-    data = JSON.parse(request.responseText);
-  } else {
-    data = {'url': 'img/imm.jpg'}
-  }
-};
-request.onerror = function() {
-  // There was a connection error of some sort
-    data = {'url': 'img/imm.jpg'}
-};
-request.send();
-
-
 //define the random integer function
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -55,7 +28,7 @@ function getRandomInt(max) {
 //add the event listener to the dom
 document.addEventListener("DOMContentLoaded", function() {
 
-  //sliders
+  //sliders & controls
   //creSlider -> slider to add cells
   //emoSlider -> slider connected to emotions, add grayscale
   //effSlider -> slider to swap cells into 0, 1 graphically
@@ -178,9 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
       for (var i = 1; i <= maximgs; i++) {
         creArt[i] = p.loadImage('img/cre/'+(getRandomInt(70)+1)+'.jpg');
       }
-      nasa = p.createImg(data.url);
-      nasa.hide();
-
+      nasa = p.loadImage('img/amb/'+(getRandomInt(70)+1)+'.jpg');
     }
 
 
@@ -332,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
             //add greyscale or color emotion
               if (getRandomInt(16)+1 <= emoSlider.value && i > 1 && i < matrix.length - 2){
 
-                //add image from NASA APOD json
+                //add image from NASA APOD 
                 p.fill(125)
                 p.noStroke();
                 p.rect(j*w, i*w, w, w);
