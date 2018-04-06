@@ -37,22 +37,28 @@ body {
   width: calc(100% - 32px);
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   /*border: 1px solid black;*/
   padding: 16px;
 }
 
-/*land child*/
+#content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
 
 #main-container {
   width: 50%;
-  height: calc(95% - 64px);
   /*border: 1px solid red;*/
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
+
+
 
 #sketch-container {
   width: 50%;
@@ -75,7 +81,6 @@ body {
 #quest-container {
   width: 100%;
   min-height: 16.66%;
-  background-color: #eee;
   margin-top: 0%;
 }
 
@@ -86,10 +91,10 @@ body {
 
 
 
+
 /*controls*/
 #slider-container {
   width: 100%;
-  align-self: center;
   display: flex;
   justify-content: flex-start;
   /*border: 1px solid blue;*/
@@ -107,7 +112,7 @@ body {
 
 
 .slider.vertical{
-  height: 50%;
+
 }
 
 .slider.vertical span:nth-child(3) {
@@ -124,7 +129,7 @@ input[type=range] {
 
 #controls {
   width: 100%;
-  background-color: red;
+  align-self: flex-end;
   display: flex;
   flex-wrap: wrap;
 }
@@ -133,14 +138,40 @@ input[type=range] {
   width: 50%;
 }
 
+#controls > div:nth-of-type(2){
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 #save {
-  height: 48px;
+  font-family: inherit;
+  height: 56px;
   width: 100%;
-  background-color: #212121;
-  color: #fafafa;
+  border: 2px solid black;
+  border-bottom: 4px solid black;
+  background-color: #fafafa;
+  color: black;
   padding: 8px;
   font-size: 16px;
+  text-transform: uppercase;
+}
 
+input[type=text], textarea {
+  border-radius: 0;
+  padding: 0;
+  border-width: 0px solid black;
+  border-style: solid;
+  border-width: 2px;
+  border: 0px;
+  border-bottom: 2px solid black;
+  -webkit-appearance: none;
+  max-width: 100%;
+}
+
+input[type=text], textarea {
+  font-family : inherit;
+  font-size   : 36px;
 }
 
 /*nav*/
@@ -171,17 +202,21 @@ input[type=range] {
 
 @media screen and (max-width: 991px)  {
 
-  #landing{
+
+  #content {
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
 
   #main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
     height: auto;
     order: 2;
-
   }
   #sketch-container {
     width: 100%;

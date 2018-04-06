@@ -97,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
   //var w = 16;
   var canvasWidth = (matContainer.clientWidth);
   var w = Math.round(canvasWidth/cells.length);
+  if(w*cells.length > canvasWidth){
+    w = Math.round((canvasWidth/cells.length)-0.6);
+  }
+  canvasWidth = w*cells.length;
 
   //adding colors:
   //write outside the draw() a function to add colors.

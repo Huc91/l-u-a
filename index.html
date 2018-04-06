@@ -32,61 +32,63 @@
 
 <body>
 <div id="landing">
-	<div id="main-container">
-		<div id="quest-container">
-			<h1>
-				CHE COSA SIGNIFICA</br>ESSERE UMANI NELL’ERA DELL’INTELLIGENZA ARTIFICIALE?
-			</h1>
+	<div id="content">
+		<div id="main-container">
+			<div id="quest-container">
+				<h1>
+					CHE COSA SIGNIFICA</br>ESSERE UMANI NELL’ERA DELL’INTELLIGENZA ARTIFICIALE?
+				</h1>
+			</div>
+				<!-- all the slider that change the matrix -->
+				<div id="slider-container">
+					<!-- stay on left side and be horizontal -->
+					<div>
+						<div class="slider">
+							<span class="slider-label">Creatività</span>
+							<input id="creSlider" type="range" min="0" max="8" value="0" step="1"></input>
+						</div>
+						<div class="slider">
+							<span class="slider-label">Ambizione</span>
+							<input id="emoSlider" type="range" min="0" max="9" value="0" step="1"></input>
+						</div>
+						<div class="slider">
+							<span class="slider-label">Efficienza</span>
+							<input id="effSlider" type="range" min="0" max="9" value="0" step="1"></input>
+						</div>
+						<div class="slider">
+							<span class="slider-label">Immortalità</span>
+							<input id="alcSlider" type="range" min="0" max="9" value="0" step="1"></input>
+						</div>
+					</div>
+					<!-- stay on right side and be vertical -->
+					<div>
+						<div class="slider vertical">
+							<div>
+							<span class="slider-label">Uomo</span>
+							</div>
+							<div>
+							<input id="zerSlider" type="range" class="vertical" min="0" max="8" value="4" step="1"></input>
+						  </div>
+							<div>
+							<span class="slider-label">Macchina</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="controls">
+					<div>
+						Scrivi le iniziali del tuo nome
+						<input type="text" id="name" placeholder="UA" maxlength="2" pattern="[A-Za-z]{2}" />
+					</div>
+					<div>
+						<button id="save">salva il tuo logo</button>
+					</div>
+				</div>
 		</div>
-			<!-- all the slider that change the matrix -->
-			<div id="slider-container">
-				<!-- stay on left side and be horizontal -->
-				<div>
-					<div class="slider">
-						<span class="slider-label">Creatività</span>
-						<input id="creSlider" type="range" min="0" max="8" value="0" step="1"></input>
-					</div>
-					<div class="slider">
-						<span class="slider-label">Ambizione</span>
-						<input id="emoSlider" type="range" min="0" max="9" value="0" step="1"></input>
-					</div>
-					<div class="slider">
-						<span class="slider-label">Efficienza</span>
-						<input id="effSlider" type="range" min="0" max="9" value="0" step="1"></input>
-					</div>
-					<div class="slider">
-						<span class="slider-label">Immortalità</span>
-						<input id="alcSlider" type="range" min="0" max="9" value="0" step="1"></input>
-					</div>
-				</div>
-				<!-- stay on right side and be vertical -->
-				<div>
-					<div class="slider vertical">
-						<div>
-						<span class="slider-label">Uomo</span>
-						</div>
-						<div>
-						<input id="zerSlider" type="range" class="vertical" min="0" max="8" value="4" step="1"></input>
-					  </div>
-						<div>
-						<span class="slider-label">Macchina</span>
-						</div>
-					</div>
-				</div>
+		<div id="sketch-container">
+			<!-- Our sketch will go here! -->
+			<div id="sketch-holder">
 			</div>
-			<div id="controls">
-				<div>
-					Scrivi le iniziali del tuo nome
-					<input type="text" id="name" placeholder="Inserisci 2 lettere" maxlength="2" pattern="[A-Za-z]{2}" />
-				</div>
-				<div>
-					<button id="save">salva il tuo logo</button>
-				</div>
-			</div>
-	</div>
-	<div id="sketch-container">
-		<!-- Our sketch will go here! -->
-		<div id="sketch-holder">
 		</div>
 	</div>
 	<div id="nav">
