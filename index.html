@@ -35,9 +35,17 @@
 	<div id="content">
 		<div id="main-container">
 			<div id="quest-container">
-				<h1>
+				<p class="ques">
 					CHE COSA SIGNIFICA</br>ESSERE UMANI NELL’ERA DELL’INTELLIGENZA ARTIFICIALE?
-				</h1>
+				</p>
+				<div class="scroll">
+					<span class="hint">
+						Scrolla
+					</span>
+					<span class="down-arrow">
+						↓
+					</span>
+				</div>
 			</div>
 				<!-- all the slider that change the matrix -->
 				<div id="slider-container">
@@ -60,28 +68,28 @@
 							<input id="alcSlider" type="range" min="0" max="9" value="0" step="1"></input>
 						</div>
 					</div>
-					<!-- stay on right side and be vertical -->
-					<div>
-						<div class="slider vertical">
-							<div>
-							<span class="slider-label">Uomo</span>
-							</div>
-							<div class="vertical--range-container">
-							<input id="zerSlider" type="range" class="vertical" min="0" max="8" value="4" step="1"></input>
-						  </div>
-							<div>
-							<span class="slider-label">Macchina</span>
-							</div>
-						</div>
-					</div>
 				</div>
 				<div id="controls">
-					<div>
-						<span class="hint">Scrivi le tue iniziali</span>
-						<input type="text" id="name" placeholder="Le iniziali del tuo nome" maxlength="2" pattern="[A-Za-z]{2}" />
+					<!-- stay on right side and be vertical -->
+					<div class="slider vertical">
+						<div>
+						<p class="slider-label">Uomo</span>
+						</div>
+						<div class="vertical--range-container">
+						<input id="zerSlider" type="range" class="vertical" min="0" max="8" value="4" step="1"></input>
+						</div>
+						<div>
+						<p class="slider-label">Macchina</span>
+						</div>
 					</div>
-					<div>
-						<button id="save">salva logo</button>
+					<div class="inputs-holder">
+						<div>
+							<span class="hint">Scrivi le tue iniziali</span>
+							<input type="text" id="name" placeholder="Le iniziali del tuo nome" maxlength="2" pattern="[A-Za-z]{2}" />
+						</div>
+						<div>
+							<button id="save">salva logo</button>
+						</div>
 					</div>
 				</div>
 		</div>
