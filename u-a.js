@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var matContainer = document.getElementById('sketch-holder');
 
   var holder = document.getElementById('sketch-holder');
+  var cont = document.getElementById('sketch-container');
   var main = document.getElementById('main-container');
 
   var focus;
@@ -54,10 +55,12 @@ document.addEventListener("DOMContentLoaded", function() {
     nameInput.onblur = function() {
       focus = false
       holder.style.cssText = "top: 16px;";
+      cont.style.cssText = "top: 0px;";
     };
     nameInput.onfocus = function() {
       focus = true;
-      holder.style.cssText = "top: -50vh;";
+      holder.style.cssText = "top: -40vh;";
+      cont.style.cssText = "top: -40vh;";
     };
   }
 
@@ -67,12 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
     downArrow.classList.remove("supermario");
     downArrow.classList.add("ghost");
   });
-  main.addEventListener("click", function(){
-    if (focus = true) {
-      nameInput.blur();
-      focus = false;
-    }
-  })
 
   main.addEventListener("touchstart", function(){
     if (focus = true) {
