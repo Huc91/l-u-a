@@ -212,6 +212,10 @@
     text-align: right;
   }
 
+  #controls {
+    margin-bottom: 80px;
+  }
+
 
   .inputs-holder {
     width: 100%;
