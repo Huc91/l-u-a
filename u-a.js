@@ -48,13 +48,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var main = document.getElementById('main-container');
 
-  nameInput.onblur = function() {
+  /*nameInput.onblur = function() {
     main.style.cssText = "position: relative; top: 0; background: #fafafa;";
   };
 
   nameInput.onfocus = function() {
+    if()
     main.style.cssText = "position: absolute; top: 0; right: 16px; width: calc(100% - 32px) background: blue;";
-  };
+  };*/
 
   //some beauty to the page
   window.addEventListener("scroll", function(){
