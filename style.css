@@ -20,12 +20,11 @@ p.ques {
   text-align: center;
 }
 
-.down-arrow {
+#down-arrow {
   box-sizing: border-box;
-  font-size: 100px;
+  font-size: 80px;
   text-align: center;
-  line-height: 90px;
-
+  line-height: 72px;
 }
 
 .slider-label {
@@ -100,7 +99,7 @@ body {
 
 #sketch-container {
   width: 50%;
-  height: 100vh;
+  height: 95vh;
   /*border: 1px solid green;*/
   display: flex;
   flex-direction: column;
@@ -115,6 +114,14 @@ body {
   margin-top: 0%;
   align-self: center;
   /*border: 2px pink solid;*/
+}
+
+#p5_loading {
+  width: calc(34% - 32px);
+  height: 50%;
+  margin-top: 0%;
+  align-self: center;
+  background-color: black;
 }
 
 /*#main-container child*/
@@ -166,7 +173,7 @@ body {
 
 
 .slider-label {
-  width: 38.33%;
+  width: 36.33%;
   text-transform: uppercase;
 }
 
@@ -179,12 +186,14 @@ input[type=range] {
   align-self: flex-end;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 32px;
 }
 
 
 #controls > div.slider.vertical{
   flex-direction: column;
-  width: 38.33% !important;
+  width: 37.33% !important;
+  flex-wrap: nowrap;
 }
 
 .inputs-holder {
@@ -323,6 +332,46 @@ input:focus, button:focus {
   border-top: 4px solid black !important;
 }
 
+/*CSS animation*/
+
+.supermario {
+	animation-duration: 3s;
+	animation-name: supermario;
+	animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.ghost {
+  animation-duration: 2s;
+  animation-name: ghost;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes supermario {
+  from {
+    transform: translate(0,0);
+  }
+
+  50% {
+    transform: translate(0,36px);
+  }
+
+  to {
+    transform: translate(0,0);
+  }
+}
+
+@keyframes ghost {
+  from {
+    opacity: 1;
+  }
+
+   to {
+    opacity: 0;
+  }
+}
+
+
 
 
 
@@ -349,189 +398,4 @@ input:focus, button:focus {
   #nav {
     font-size: 12px;
   }
-}
-
-@media screen and (max-width: 1100px)  {
-  p.ques {
-    font-size: 36px;
-    line-height: 40px;
-  }
-}
-
-@media screen and (max-width: 991px)  {
-  #landing {
-    width: auto;
-  }
-
-  #content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-
-  #main-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
-    order: 2;
-  }
-
-  #sketch-container {
-    display: flex;
-    width: 100%;
-    order: 1;
-    justify-content: center;
-  }
-
-  #nav {
-    order: 3;
-  }
-
-  #sketch-holder {
-    width: 75%;
-    margin-top: 0%;
-    align-self: center;
-}
-
-
-
-  p.ques {
-    padding-top: 8px;
-    font-size: 22px;
-    line-height: 26px;
-    text-align: center;
-  }
-
-  #slider-container{
-    flex-direction: column;
-  }
-
-  #slider-container div {
-    width: 100%;
-  }
-
-  #parameters {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  #parameters > .slider {
-    width: 50%;
-    box-sizing: border-box;
-  }
-
-  .slider {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  #parameters > .slider:nth-of-type(1) {
-    order: 1;
-    padding-right: 16px;
-  }
-  #parameters > .slider:nth-of-type(2) {
-    order: 3;
-    padding-right: 16px;
-  }
-  #parameters > .slider:nth-of-type(3) {
-    order: 2;
-    padding-left: 16px;
-  }
-  #parameters > .slider:nth-of-type(4) {
-    order: 4;
-    padding-left: 16px;
-  }
-
-  #parameters > .slider:nth-of-type(3) > span, #parameters > .slider:nth-of-type(4) > span {
-    align-self: flex-end;
-  }
-
-
-
-  .vertical {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .vertical  div {
-    width: 100%;
-  }
-
-  .vertical > div:nth-of-type(1) {
-    width: 50% !important;
-    order: 1;
-  }
-
-  .vertical > div:nth-of-type(2) {
-    order: 3;
-  }
-
-  .vertical > div:nth-of-type(3) {
-    width: 50% !important;
-    order: 2;
-    text-align: right;
-  }
-
-  .vertical--range-container {
-    height: auto;
-  }
-
-  #controls >div:nth-of-type(1) {
-    width: calc(50% + 32px);
-  }
-
-  #controls >div:nth-of-type(2) {
-    width: calc(100% - 50% - 32px);
-  }
-
-  #save {
-    height: 48px;
-    width: 100%;
-  }
-
-  .hint {
-    display: none;
-  }
-
-  input[type=text], textarea {
-    max-width: calc(100% - 16px);
-    padding-top: 16px;
-  }
-
-  input[type=text]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  font-size: 12px;
-  }
-  input[type=text]::-moz-placeholder { /* Firefox 19+ */
-    font-size: 12px;
-  }
-  input[type=text]:-ms-input-placeholder { /* IE 10+ */
-    font-size: 12px;
-  }
-  input[type=text]:-moz-placeholder { /* Firefox 18- */
-    font-size: 12px;
-  }
-
-  #nav {
-    flex-wrap: wrap;
-    font-size: 13px;
-    margin-bottom: 48px;
-  }
-
-  #nav > div:nth-of-type(1){
-    width: calc(50% + 32px);
-  }
-
-  #logo-name {
-    width: calc(100% - 50% - 32px) !important;
-    margin-left: 0 !important;
-  }
-
-
-
 }

@@ -28,6 +28,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 	<link href="input-range.css" rel="stylesheet">
+	<link href="style-responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
 					<span class="hint">
 						Scrolla
 					</span>
-					<span class="down-arrow">
+					<span id="down-arrow" class="supermario">
 						↓
 					</span>
 				</div>
@@ -85,7 +86,7 @@
 					<div class="inputs-holder">
 						<div>
 							<span class="hint">Scrivi le tue iniziali</span>
-							<input type="text" id="name" placeholder="Le iniziali del tuo nome" maxlength="2" pattern="[A-Za-z]{2}" />
+							<input type="text" id="name" placeholder="Le tue iniziali" maxlength="2" pattern="[A-Za-z]{2}" />
 						</div>
 						<div>
 							<button id="save">salva logo</button>
@@ -107,7 +108,7 @@
 			</h4>
 		</div>
 		<div id="logo-name">
-			<a>
+			<a href="process.html">
 				Logo design process</br>
 				"Hacking Wolfram"
 			</a>

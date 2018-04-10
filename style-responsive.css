@@ -1,0 +1,315 @@
+@media screen and (max-width: 1440px) {
+
+  p.ques {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  #down-arrow {
+    font-size: 64px;
+    line-height: 56px;
+  }
+
+  .slider-label {
+    font-size: 18px;
+  }
+
+  .slider-label {
+    width: 35%;
+  }
+
+  .slider {
+    padding: 6px 0px 6px 0px;
+  }
+
+  .vertical--range-container {
+    height: 90px;
+  }
+
+  input[type=range].vertical {
+      width: 122px;
+  }
+
+  #controls > div.slider.vertical {
+    flex-wrap: nowrap;
+  }
+
+  #save {
+    margin-top: 32px;
+  }
+
+  input[type="range"].vertical {
+    -webkit-transform: rotate(90deg) translate(22px,19px);
+    -moz-transform: rotate(90deg) translate(22px,19px);
+    -o-transform: rotate(90deg) translate(22px,19px);
+    -ms-transform: rotate(90deg) translate(22px,19px);
+    transform: rotate(90deg) translate(22px,19px);
+  }
+
+}
+
+@media screen and (max-width: 991px)  {
+  #landing {
+    width: auto;
+  }
+
+  #content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  #main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    order: 2;
+  }
+
+  #sketch-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    order: 1;
+    height: 50vh;
+    justify-content: center;
+    background-color: red;
+    z-index: 1000;
+    position: fixed;
+  }
+
+  #nav {
+    order: 3;
+  }
+
+  #sketch-holder {
+    width: 75%;
+    align-self: center;
+}
+
+#quest-container {
+  height: 50vh;
+  margin-top: 50vh;
+}
+
+  p.ques {
+    padding-top: 8px;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  #down-arrow {
+    box-sizing: border-box;
+    font-size: 48px;
+    text-align: center;
+    line-height: 56px;
+  }
+
+
+  #slider-container{
+    flex-direction: column;
+  }
+
+  #slider-container div {
+    width: 100%;
+  }
+
+  #parameters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #parameters > .slider {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .slider {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .slider-label {
+    font-size: 14px;
+  }
+
+  #parameters > .slider:nth-of-type(1) {
+    order: 1;
+    padding-right: 16px;
+  }
+  #parameters > .slider:nth-of-type(2) {
+    order: 3;
+    padding-right: 16px;
+  }
+  #parameters > .slider:nth-of-type(3) {
+    order: 2;
+    padding-left: 16px;
+  }
+  #parameters > .slider:nth-of-type(4) {
+    order: 4;
+    padding-left: 16px;
+  }
+
+  #parameters > .slider:nth-of-type(3) > span, #parameters > .slider:nth-of-type(4) > span {
+    align-self: flex-end;
+  }
+
+
+
+  .vertical {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .vertical  div {
+    width: 100%;
+  }
+
+  .vertical > div:nth-of-type(1) {
+    width: 50% !important;
+    order: 1;
+  }
+
+  .vertical > div:nth-of-type(2) {
+    order: 3;
+  }
+
+  .vertical > div:nth-of-type(3) {
+    width: 50% !important;
+    order: 2;
+    text-align: right;
+  }
+
+  .vertical--range-container {
+    height: auto;
+  }
+
+  #controls > div.slider.vertical {
+    flex-direction: row;
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+
+  #controls >div:nth-of-type(1) {
+    width: calc(50% + 32px);
+  }
+
+  #controls > div.slider.vertical .slider-label {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+  #controls > div.slider.vertical > div:nth-of-type(3) .slider-label {
+    text-align: right;
+  }
+
+
+  .inputs-holder {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+  }
+
+  .inputs-holder > div {
+    width: 50%;
+    display:flex;
+    align-content: flex-end;
+  }
+
+  #save {
+    box-sizing: border-box;
+    height: 48px;
+    width: calc(100% - 32px);
+    margin-left: 16px;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  input[type=text], textarea {
+    max-width: calc(100% - 16px);
+    padding-top: 16px;
+  }
+
+  input[type=text]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+  }
+  input[type=text]::-moz-placeholder { /* Firefox 19+ */
+    font-size: 12px;
+  }
+  input[type=text]:-ms-input-placeholder { /* IE 10+ */
+    font-size: 12px;
+  }
+  input[type=text]:-moz-placeholder { /* Firefox 18- */
+    font-size: 12px;
+  }
+
+  #nav {
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin-bottom: 48px;
+  }
+
+  #nav > div:nth-of-type(1){
+    width: calc(50%);
+    box-sizing: border-box;
+    padding-right: 8px;
+  }
+
+  #nav h4 {
+    font-size: 10px;
+  }
+
+  #nav strong {
+    font-size: 12px;
+  }
+
+  #nav div#contact {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  #nav div#contact > div#social-row {
+    width: 100%;
+    padding-bottom: 4px;
+  }
+
+  #logo-name {
+    width: calc(50%) !important;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+    padding-left: 16px;
+  }
+  /*range slider*/
+  :root {
+    --main-dimension: 12px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+  input[type=range].vertical {
+      width: 100%;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  input[type="range"] {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

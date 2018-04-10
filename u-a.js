@@ -28,6 +28,13 @@ function getRandomInt(max) {
 //add the event listener to the dom
 document.addEventListener("DOMContentLoaded", function() {
 
+  //some beauty to the page
+  window.addEventListener("scroll", function(){
+    var downArrow = document.getElementById('down-arrow');
+    downArrow.classList.remove("supermario");
+    downArrow.classList.add("ghost");
+  });
+
   //sliders & controls
   //creSlider -> slider to add cells
   //emoSlider -> slider connected to emotions, add grayscale
@@ -249,17 +256,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //create initial big square
     function letteringSquare(x,y,dimension,initial){
+      var initial = initial.toUpperCase();
       p.push();
-      p.fill(0);
+      p.fill(255);
       p.rect(x,y,dimension,dimension);
-      //p.fill(255)
-      //p.rect(x+w,y+w,dimension-w,dimension-w);
+      p.fill(0)
+      p.rect(x+w,y+w,dimension-w*2,dimension-w*2);
+      p.fill(255);
+      p.rect(x+w*2,y+w*2,dimension-w*4,dimension-w*4);
+      p.fill(0);
+      p.rect(x+w*3,y+w*3,dimension-w*6,dimension-w*6);
       p.fill(255)
-      p.textSize(w*3);
-      p.textFont('Space Mono');
-      p.textAlign(p.CENTER, p.CENTER);
-      p.text(' '+initial, x, y, dimension, dimension);
-      p.pop()
+      if (initial !== 'LOGO') {
+        p.textSize(w*2);
+        p.textFont('Space Mono');
+        p.textAlign(p.CENTER, p.CENTER);
+        p.text(' '+initial, x, y+w/6, dimension, dimension);
+        p.pop()
+      } else {
+        p.textSize(w);
+        p.textFont('Space Mono');
+        p.textAlign(p.LEFT, p.TOP);
+        p.text('U/',x+w*3+w/6,y+w*3+w/6,dimension-w*6,dimension-w*6);
+        p.text('A',x+w*3+w/6,y+w*3+w,dimension-w*6,dimension-w*6);
+      }
     }
 
     //what to display in the draw function
@@ -303,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
             //add greyscale or color emotion
               if (getRandomInt(16)+1 <= emoSlider.value && i > 1 && i < matrix.length - 2){
 
-                //add image from NASA APOD 
+                //add image from NASA APOD
                 p.fill(125)
                 p.noStroke();
                 p.rect(j*w, i*w, w, w);
@@ -339,8 +359,9 @@ document.addEventListener("DOMContentLoaded", function() {
         //letteringSquare parameters x,y,dimension,initial
         var first = nameInitial.slice(0,1);
         var second = nameInitial.slice(1,2);
-        letteringSquare(0,0,w*6,first);
-        letteringSquare((w*cells.length)-(w*6),(w*cells.length)-(w*6),w*6,second);
+        letteringSquare(0,0,w*8,first);
+        letteringSquare((w*cells.length)-(w*8),0,w*8,second);
+        letteringSquare(0,(w*cells.length)-(w*8),w*8,'logo');
       }
       p.noLoop()
     };

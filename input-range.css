@@ -41,6 +41,7 @@ input[type=range]::-webkit-slider-thumb {
   height: var(--main-dimension);
   width: var(--main-dimension);
   border-radius: 100%;
+  border-color: black;
   background: var(--main-thumb-color);
   cursor: pointer;
   margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
@@ -51,6 +52,7 @@ input[type=range]::-moz-range-thumb {
   height: var(--main-dimension);
   width: var(--main-dimension);
   border-radius: 100%;
+  border-color: black;
   background: var(--main-thumb-color);
   cursor: pointer;
 }
@@ -60,7 +62,7 @@ input[type=range]::-ms-thumb {
   height: var(--main-dimension);
   width: var(--main-dimension);
   border-radius: 100%;
-    background: var(--main-thumb-color);
+  background: var(--main-thumb-color);
   cursor: pointer;
 }
 
@@ -107,22 +109,9 @@ input[type=range]:focus::-ms-fill-upper {
 
 input[type=range].vertical {
     width: 150px;
-    -webkit-transform: rotate(90deg) translate(75px,50%);
-    -moz-transform: rotate(90deg) translate(75px,50%);
-    -o-transform: rotate(90deg) translate(75px,50%);
-    -ms-transform: rotate(90deg) translate(75px,50%);
+    -webkit-transform: rotate(90deg) translate(35px,30px);
+    -moz-transform: rotate(90deg) translate(35px,30px);
+    -o-transform: rotate(90deg) translate(35px,30px);
+    -ms-transform: rotate(90deg) translate(35px,30px);
     transform: rotate(90deg) translate(35px,30px);
-}
-
-/*focus*/
-
-@media screen and (max-width: 991px)  {
-  input[type=range].vertical {
-      width: 100%;
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-      transform: rotate(0deg);
-  }
 }
