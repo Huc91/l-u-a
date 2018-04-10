@@ -47,13 +47,14 @@ document.addEventListener("DOMContentLoaded", function() {
   var matContainer = document.getElementById('sketch-holder');
 
   var holder = document.getElementById('sketch-holder');
+  var main = document.getElementById('main-container');
 
   if (window.innerWidth < 991 ) {
     nameInput.onblur = function() {
       holder.style.cssText = "top: 16px;";
     };
     nameInput.onfocus = function() {
-      holder.style.cssText = "top: -25vh;";
+      holder.style.cssText = "top: -50vh;";
     };
   }
 
@@ -62,8 +63,15 @@ document.addEventListener("DOMContentLoaded", function() {
     var downArrow = document.getElementById('down-arrow');
     downArrow.classList.remove("supermario");
     downArrow.classList.add("ghost");
-    nameInput.blur();
   });
+
+  main.addEventListener("click", function(){
+    nameInput.blur();
+  })
+
+  main.addEventListener("touchstart", function(){
+    nameInput.blur();
+  })
 
 
   //define the cells
