@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
     downArrow.classList.add("ghost");
   });
 
+
+
   //sliders & controls
   //creSlider -> slider to add cells
   //emoSlider -> slider connected to emotions, add grayscale
@@ -50,6 +52,15 @@ document.addEventListener("DOMContentLoaded", function() {
   //I'll use it to get a click/tap event on the canvas
   var matContainer = document.getElementById('sketch-holder');
 
+    var main = document.getElementById('main-container');
+
+  nameInput.onblur = function() {
+    main.style.cssText = "position: relative; top: 0; background: red;";
+  };
+
+  nameInput.onfocus = function() {
+    main.style.cssText = "position: absolute; top: 0; background: blue;";
+  };
 
   //define the cells
 
