@@ -79,7 +79,7 @@
     order: 1;
     height: 50vh;
     justify-content: center;
-    background-color: #212121;
+    background-color: #fafafa;
     z-index: 1000;
     position: fixed;
   }
