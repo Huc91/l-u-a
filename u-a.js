@@ -46,23 +46,23 @@ document.addEventListener("DOMContentLoaded", function() {
   //I'll use it to get a click/tap event on the canvas
   var matContainer = document.getElementById('sketch-holder');
 
-    var main = document.getElementById('main-container');
+  var holder = document.getElementById('sketch-holder');
 
-  /*nameInput.onblur = function() {
-    main.style.cssText = "position: relative; top: 0; background: #fafafa;";
-  };
-
-  nameInput.onfocus = function() {
-    if()
-    main.style.cssText = "position: absolute; top: 0; right: 16px; width: calc(100% - 32px) background: blue;";
-  };*/
+  if (window.innerWidth < 991 ) {
+    nameInput.onblur = function() {
+      holder.style.cssText = "top: 16px;";
+    };
+    nameInput.onfocus = function() {
+      holder.style.cssText = "top: -25vh;";
+    };
+  }
 
   //some beauty to the page
   window.addEventListener("scroll", function(){
     var downArrow = document.getElementById('down-arrow');
     downArrow.classList.remove("supermario");
     downArrow.classList.add("ghost");
-    main.style.cssText = "position: relative; top: 0; background: #fafafa;";
+    nameInput.blur();
   });
 
 

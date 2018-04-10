@@ -91,6 +91,7 @@
   #sketch-holder {
     width: 75%;
     align-self: center;
+    top:16px;
 }
 
 #quest-container {
