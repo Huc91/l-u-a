@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var main = document.getElementById('main-container');
 
   nameInput.onblur = function() {
-    main.style.cssText = "position: relative; top: 0; background: #212121; z-index: 0";
+    main.style.cssText = "position: relative; top: 0; background: #fafafa;";
   };
 
   nameInput.onfocus = function() {
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var downArrow = document.getElementById('down-arrow');
     downArrow.classList.remove("supermario");
     downArrow.classList.add("ghost");
-    main.style.cssText = "position: relative; top: 0; background: #212121; z-index: 0";
+    main.style.cssText = "position: relative; top: 0; background: #fafafa;";
   });
 
 
