@@ -37,6 +37,24 @@ h4 {
   font-weight: normal;
 }
 
+h3 {
+  font-weight: 21px;
+}
+
+h4.param > span {
+  border-bottom: 1px solid black;
+}
+
+h4.param {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+span#back {
+  font-size: 26px;
+  font-weight: bold;
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
   color: black;
