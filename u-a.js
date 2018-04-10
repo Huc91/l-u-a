@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
   window.addEventListener("keydown", function(event) {
-    if(event.code == 'Enter' || event.key = 'Enter'){
+    if(event.code == 'Enter' || event.key == 'Enter'){
       nameInput.blur();
       focus = false;
     }
