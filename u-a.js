@@ -28,12 +28,6 @@ function getRandomInt(max) {
 //add the event listener to the dom
 document.addEventListener("DOMContentLoaded", function() {
 
-  //some beauty to the page
-  window.addEventListener("scroll", function(){
-    var downArrow = document.getElementById('down-arrow');
-    downArrow.classList.remove("supermario");
-    downArrow.classList.add("ghost");
-  });
 
 
 
@@ -55,12 +49,21 @@ document.addEventListener("DOMContentLoaded", function() {
     var main = document.getElementById('main-container');
 
   nameInput.onblur = function() {
-    main.style.cssText = "position: relative; top: 0; background: red;";
+    main.style.cssText = "position: relative; top: 0; background: #212121; z-index: 0";
   };
 
   nameInput.onfocus = function() {
-    main.style.cssText = "position: absolute; top: 0; background: blue;";
+    main.style.cssText = "position: absolute; top: 0; right: 16px; width: calc(100% - 32px) background: blue;";
   };
+
+  //some beauty to the page
+  window.addEventListener("scroll", function(){
+    var downArrow = document.getElementById('down-arrow');
+    downArrow.classList.remove("supermario");
+    downArrow.classList.add("ghost");
+    main.style.cssText = "position: relative; top: 0; background: #212121; z-index: 0";
+  });
+
 
   //define the cells
 
