@@ -59,9 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     nameInput.onfocus = function() {
       focus = true;
-      holder.style.cssText = "top: -40vh;";
-      cont.style.cssText = "top: -40vh;";
+      holder.style.cssText = "top: -50vh;";
+      cont.style.cssText = "top: -50vh;";
     };
+
   }
 
   //some beauty to the page
@@ -77,6 +78,13 @@ document.addEventListener("DOMContentLoaded", function() {
       focus = false;
     }
   })
+
+  window.addEventListener("keydown", function(event) {
+    if(event.code == 'Enter'){
+      nameInput.blur();
+      focus = false;
+    }
+  }, true);
 
 
   //define the cells
