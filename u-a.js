@@ -49,11 +49,14 @@ document.addEventListener("DOMContentLoaded", function() {
   var holder = document.getElementById('sketch-holder');
   var main = document.getElementById('main-container');
 
+  var focus;
   if (window.innerWidth < 991 ) {
     nameInput.onblur = function() {
+      focus = false
       holder.style.cssText = "top: 16px;";
     };
     nameInput.onfocus = function() {
+      focus = true;
       holder.style.cssText = "top: -50vh;";
     };
   }
@@ -64,13 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
     downArrow.classList.remove("supermario");
     downArrow.classList.add("ghost");
   });
-
   main.addEventListener("click", function(){
-    nameInput.blur();
+    if (focus = true) {
+      nameInput.blur();
+      focus = false;
+    }
   })
 
   main.addEventListener("touchstart", function(){
-    nameInput.blur();
+    if (focus = true) {
+      nameInput.blur();
+      focus = false;
+    }
   })
 
 
