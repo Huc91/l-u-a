@@ -304,13 +304,13 @@ document.addEventListener("DOMContentLoaded", function() {
       p.rect(x+w*3,y+w*3,dimension-w*6,dimension-w*6);
       p.fill(255)
       if (initial !== 'LOGO') {
-        p.textSize(w*2);
+        p.textSize(w*1.5);
         p.textFont('Space Mono');
         p.textAlign(p.CENTER, p.CENTER);
         p.text(' '+initial, x, y, dimension, dimension);
         p.pop()
       } else {
-        p.textSize(w);
+        p.textSize(w*0.8);
         p.textFont('Space Mono');
         p.textAlign(p.LEFT, p.TOP);
         p.text('U/',x+w*3+w/6,y+w*3,dimension-w*6,dimension-w*6);
