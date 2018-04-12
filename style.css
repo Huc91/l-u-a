@@ -128,7 +128,7 @@ body {
 
 #sketch-holder {
   position: fixed;
-  width: calc(34% - 32px);
+  width: calc(41% - 32px);
   margin-top: 0%;
   align-self: center;
   /*border: 2px pink solid;*/
@@ -360,7 +360,7 @@ input:focus, button:focus {
 }
 
 .ghost {
-  animation-duration: 2s;
+  animation-duration: 0.5s;
   animation-name: ghost;
   -webkit-animation-fill-mode: forwards;
 }
