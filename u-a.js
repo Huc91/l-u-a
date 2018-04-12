@@ -183,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //that's why a use that "weird" p  before p5.js methods
   var s = function( p ) {
 
+    var canvas;
 
     var creArt = [];
     var nasa;
@@ -245,10 +246,14 @@ document.addEventListener("DOMContentLoaded", function() {
     alcSlider.addEventListener("input", function(){
       p.loop();
     });
-
     //save the Logo
     saveButton.addEventListener("click", function(){
-      p.saveCanvas();
+      p.save('umanesimo-artificiale.jpg');
+      //var canvas = document.getElementById('defaultCanvas0');
+      //var dataURL = canvas.toDataURL("image/png");
+      /*var w = window.open('about:blank', 'image from canvas');
+      w.document.write("<p>Right click or tap on image to save it</p>");
+      w.document.write("<img src='" + dataURL + "' alt='from canvas'/>");*/
     });
 
     //get the inserted text string
@@ -403,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
   p.setup = function() {
-    p.createCanvas(canvasWidth, canvasWidth);
+    canvas = p.createCanvas(canvasWidth, canvasWidth);
     p.stroke(255);
     p.noFill();
     p.imageMode(p.CENTER);
