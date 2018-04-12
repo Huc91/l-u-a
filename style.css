@@ -129,6 +129,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    z-index: 998;
 }
 
 /*#sketch-container child*/
@@ -306,7 +307,9 @@ input[type=text]:-moz-placeholder { /* Firefox 18- */
 }
 
 #logo-name{
+  position: relative;
   margin-left: 32px;
+  z-index: 999;
 }
 
 #contact {
