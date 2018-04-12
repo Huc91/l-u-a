@@ -248,12 +248,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     //save the Logo
     saveButton.addEventListener("click", function(){
-      p.save('umanesimo-artificiale.jpg');
-      //var canvas = document.getElementById('defaultCanvas0');
+      //p.save('umanesimo-artificiale.jpg');
+
+      var canvas = document.getElementById('defaultCanvas0');
       //var dataURL = canvas.toDataURL("image/png");
       /*var w = window.open('about:blank', 'image from canvas');
       w.document.write("<p>Right click or tap on image to save it</p>");
       w.document.write("<img src='" + dataURL + "' alt='from canvas'/>");*/
+
+      canvas.toBlob(function(blob) {
+        saveAs(blob, "umanesimo-artificiale.jpg");
+      });
     });
 
     //get the inserted text string
