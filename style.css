@@ -112,6 +112,10 @@ body {
   justify-content: space-between;
 }
 
+#main-container.process {
+  text-align: justify;
+}
+
 
 
 

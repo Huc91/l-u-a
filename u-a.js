@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function() {
         p.textSize(w*0.8);
         p.textFont('Space Mono');
         p.textAlign(p.LEFT, p.TOP);
-        p.text('U/',x+w*3+w/6,y+w*3,dimension-w*6,dimension-w*6);
+        p.text('U / ',x+w*3+w/6,y+w*3,dimension-w*6,dimension-w*6);
         p.text('A',x+w*3+w/6,y+w*3+w,dimension-w*6,dimension-w*6);
       }
     }
