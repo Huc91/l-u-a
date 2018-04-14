@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
           cells[creSlider.value] = 0
         }
-      console.log(cells);
+
       p.loop();
     });
     //creative
@@ -223,13 +223,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // go to the next one if the value is > than current index
       if (zerSlider.value > currentRule && currentRule >= 0 && currentRule < rulesList.length ) {
         currentRule = currentRule + 1
-        console.log(rulesList[currentRule][0]);
+        //console.log(rulesList[currentRule][0]);
         // otherwise if the value is < than current index go to the previous
       } else if (zerSlider.value < currentRule && currentRule > 0 && currentRule <= rulesList.length ) {
           currentRule = currentRule - 1
-          console.log(rulesList[currentRule][0]);
+          //console.log(rulesList[currentRule][0]);
       } else {
-        console.log('you should not see this');
+        //console.log('you should not see this');
       }
       p.loop();
     });
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
        if (value.match(/[a-z]/i)) {
         // alphabet letters found && is made of two letters
           nameInitial = value;
-          console.log('ok to pass to p5');
+          //console.log('ok to pass to p5');
           p.loop();
         }
     });
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //create polygon fuction
     function polygon(x, y, radius, slidevalue) {
-      console.log('slidevalue' + slidevalue);
+      //console.log('slidevalue' + slidevalue);
       if (slidevalue == 1 || slidevalue == 2 ){
         var npoints = 4;
       } else if (slidevalue == 3 || slidevalue == 4 ){
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var npoints = 4+30;
       }
 
-      console.log('npoint' + npoints);
+      //console.log('npoint' + npoints);
       var angle = p.TWO_PI / npoints;
       p.beginShape();
       for (var a = 0; a < p.TWO_PI; a += angle) {
@@ -330,8 +330,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //what to display in the draw function
     function display(matrix) {
-      console.log('display');
-      console.log(matrix);
+      //console.log('display');
+      //console.log(matrix);
       //draw the matrix
       // i like it with inverted colors
       for (var i = 0; i < matrix.length; i++) {
@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
       //add the initials
-      console.log(nameInitial);
+      //console.log(nameInitial);
       if (nameInitial.length === 2) {
         //letteringSquare parameters x,y,dimension,initial
         var first = nameInitial.slice(0,1);
