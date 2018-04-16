@@ -306,6 +306,12 @@ input[type=text]:-moz-placeholder { /* Firefox 18- */
   width: 50%;
 }
 
+#ass-name {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+}
+
 #logo-name{
   position: relative;
   margin-left: 32px;
