@@ -324,8 +324,8 @@ document.addEventListener("DOMContentLoaded", function() {
         p.textSize(w*0.8);
         p.textFont(ps2p);
         p.textAlign(p.LEFT, p.TOP);
-        p.text('U/ ',x+w*3+w/6,y+w*3,dimension-w*6,dimension-w*6);
-        p.text('A',x+w*3+w/6,y+w*3+w,dimension-w*6,dimension-w*6);
+        p.text('U/ ',x+w*2.5+w/6,y+w*2.5,dimension-w*5,dimension-w*5);
+        p.text('A',x+w*2.5+w/6,y+w*2.5+w,dimension-w*5,dimension-w*5);
       }
     }
 
