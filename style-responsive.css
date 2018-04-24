@@ -430,10 +430,10 @@
   }
   /*range slider*/
   :root {
-    --main-dimension: 12px;
+    --main-dimension: 16px;
   }
   input[type=range]::-webkit-slider-thumb {
-    margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
   }
   input[type=range].vertical {
       width: 100%;

@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function() {
         creArt[i] = p.loadImage('img/cre/'+(getRandomInt(70)+1)+'.jpg');
       }
       nasa = p.loadImage('img/amb/'+(getRandomInt(70)+1)+'.jpg');
+    ps2p = p.loadFont('ps2p.ttf');
     }
 
 
@@ -311,19 +312,19 @@ document.addEventListener("DOMContentLoaded", function() {
       p.fill(255);
       p.rect(x+w*2,y+w*2,dimension-w*4,dimension-w*4);
       p.fill(0);
-      p.rect(x+w*3,y+w*3,dimension-w*6,dimension-w*6);
+      p.rect(x+w*2.5,y+w*2.5,dimension-w*5,dimension-w*5);
       p.fill(255)
       if (initial !== 'LOGO') {
         p.textSize(w*1.5);
-        p.textFont('Space Mono');
+        p.textFont(ps2p);
         p.textAlign(p.CENTER, p.CENTER);
         p.text(' '+initial, x, y, dimension, dimension);
         p.pop()
       } else {
         p.textSize(w*0.8);
-        p.textFont('Space Mono');
+        p.textFont(ps2p);
         p.textAlign(p.LEFT, p.TOP);
-        p.text('U / ',x+w*3+w/6,y+w*3,dimension-w*6,dimension-w*6);
+        p.text('U/ ',x+w*3+w/6,y+w*3,dimension-w*6,dimension-w*6);
         p.text('A',x+w*3+w/6,y+w*3+w,dimension-w*6,dimension-w*6);
       }
     }
@@ -345,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function() {
               p.rect(j*w, i*w, w, w);
               p.fill(0);
               p.textSize(w*0.5);
-              p.textFont('Space Mono');
+              p.textFont('Press Start 2P');
               p.textAlign(p.CENTER, p.CENTER);
               p.text(' 1', j*w, i*w, w, w);
               //add polygon immortality
@@ -387,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 p.rect(j*w, i*w, w, w);
                 p.fill(0);
                 p.textSize(w*0.5);
-                p.textFont('Space Mono');
+                p.textFont('Press Start 2P');
                 p.textAlign(p.CENTER, p.CENTER);
                 p.text(' 0', j*w, i*w, w, w);
                 //add normal black square
