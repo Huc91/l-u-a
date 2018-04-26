@@ -315,17 +315,17 @@ document.addEventListener("DOMContentLoaded", function() {
       p.rect(x+w*2.5,y+w*2.5,dimension-w*5,dimension-w*5);
       p.fill(255)
       if (initial !== 'LOGO') {
-        p.textSize(w*1.5);
+        p.textSize(w*2);
         p.textFont(ps2p);
         p.textAlign(p.CENTER, p.CENTER);
-        p.text(' '+initial, x, y, dimension, dimension);
+        p.text(' '+initial, x+w/8, y+w/8, dimension, dimension);
         p.pop()
       } else {
-        p.textSize(w*0.8);
+        p.textSize(w*1.33);
         p.textFont(ps2p);
         p.textAlign(p.LEFT, p.TOP);
-        p.text('U/ ',x+w*2.5+w/6,y+w*2.5,dimension-w*5,dimension-w*5);
-        p.text('A',x+w*2.5+w/6,y+w*2.5+w,dimension-w*5,dimension-w*5);
+        p.text('U/', x+w*2.5+w/6, y+w*2.5+w/6, dimension-w*5, dimension-w*5);
+        p.text('A', x+w*2.5+w/6, y+w*2.5+w*1.33+w/6, dimension-w*5, dimension-w*5);
       }
     }
 
